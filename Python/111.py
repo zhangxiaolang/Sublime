@@ -1,5 +1,2 @@
-def normalize(name):
-	return name.capitalize()
-L1 = ['adam','LISA','barT']
-L2 = list(map(normalize,L1))
-print(L2)
+name = ['张三','李四','王五','赵六']
+print(name[0]+','+name[1]+','+name[-2],+','+name[-1])
