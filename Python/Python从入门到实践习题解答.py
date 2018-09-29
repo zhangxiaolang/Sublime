@@ -21,4 +21,92 @@ print(name.lstrip())
 print('制表\t'+ name.rstrip())
 print('回车\n'+name.strip())
 
-#
+#8-6
+def city_country(city,country):
+	print("{0},{1}".format(city,country))
+
+judge = 'y'
+while judge.upper() == 'Y':
+	city = input('please input you city:')
+	country = input('please input you country:')
+	city_country(city,country)
+	judge = input('\n go on ?(y/n):')
+
+#8-7,8-8
+def sings(name,sing_name,qualtity = ''):
+	info = {'歌手':name, '歌曲名':sing_name}
+	if qualtity:
+		info['歌曲数'] = qualtity
+	return info
+
+judge = 'y'
+while judge.upper() == 'Y':
+	a = input('please input singer name:')
+	b = input('please input  the CD name:')
+	c = input('if you know the CD sings qualtity ,pls enter:')
+	if c:
+		print(sings(a,b,c))
+	else:
+		print(sings(a,b))
+	judge = input('\n go on ?(y/n):')
+
+#8-7,8-8加强版
+def sings(name,sing_name,qualtity = ''):
+	info = {'歌手':name, '歌曲名':sing_name}
+	if qualtity:
+		info['歌曲数'] = qualtity
+	return info
+
+judge = 'y'
+infos = []
+while judge.upper() == 'Y':
+	a = input('please input singer name:')
+	b = input('please input  the CD name:')
+	c = input('if you know the CD sings qualtity ,pls enter:')
+	if c:
+		sings(a,b,c)
+		infos.append(sings(a,b,c))
+	else:
+		sings(a,b)
+		infos.append(sings(a,b))
+	judge = input('\n go on ?(y/n):')
+
+for i in infos:
+	print(i)
+
+
+#8-9,10
+magicians = ['1','2','3']
+def show_magicians(magicians):
+	for i in magicians:
+		print('{0}是一个魔术师！'.format(i))
+
+def make_great(magicians):
+	j = 0
+	for i in magicians:
+		magicians[j] = magicians[j] + '不'
+		print('{0}是一个魔术师！'.format(magicians[j]))
+		j += 1
+for i in magicians:
+	print(i)
+show_magicians(magicians)
+make_great(magicians)
+show_magicians(magicians)
+
+#8-11
+magicians = ['1','2','3']
+def show_magicians(magicians):
+	for i in magicians:
+		print('{0}是一个魔术师！'.format(i))
+
+def make_great(magicians):
+	j = 0
+	for i in magicians:
+		magicians[j] = magicians[j] + '不'
+		print('{0}是一个魔术师！'.format(magicians[j]))
+		j += 1
+for i in magicians:
+	print(i)
+show_magicians(magicians)
+make_great(magicians[:])
+show_magicians(magicians)
