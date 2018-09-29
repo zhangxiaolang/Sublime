@@ -36,7 +36,7 @@ else:
  print('lalala')
 
 #在字段后的 ':' 后面加一个整数会限定该字段的最小宽度，这在美化表格时很有用
-#dict键值对。删除值可以使用table.pop('Sjoerd')即可
+#dict键值对。删除值可以使用table.pop('Sjolerd')即可
 table = {'Sjoerd':4127,'Jasck':4098,'Dcab':7578}
 for name,phone in table.items():
 	print('{0:10}=====>{1:10}'.format(name,phone))
@@ -216,3 +216,87 @@ for t in triangles():
     n = n + 1
     if n == 10:
         break
+
+
+lista = list(range(1,10))
+print(lista)
+for i in lista:
+    print('this is {0}\n'.format(i))
+
+
+listb = list(range(1,10,2))
+print(listb)
+
+
+listc = []
+listd = []
+for i in range(1,1000,100):
+    listd.append(i)
+    listc.append(i**2)
+print('{0}\n{1}'.format(listc,listd))
+print('the min value in listc is :{0}'.format(min(listc)))
+print('the max value in listc is :{0}'.format(max(listc)))
+print('the listc sum is :{0}'.format(sum(listc)))
+
+
+#4-10
+print('The first three items in the list are:{0}'.format(listc[0:3]))
+k = int(len(listc)/3)
+print(k)
+print('Three items from the middle of the list are:{0}'.format(listc[k:k+3]))
+print('The last three items in the list are:{0}'.format(listc[-3:]))
+
+
+#4-11  切片在复制列表中使用
+foods = ['chiken','noodles','dumplings']
+friend_foods = foods
+friend_foods_2 = foods[:]
+foods.append('tomato')
+friend_foods.append('potato')
+friend_foods_2.append('apple')
+print('foods is :{0}'.format(foods))
+print('friend_foods is :{0}'.format(friend_foods))
+print('friend_foods_2 is :{0}'.format(friend_foods_2))
+
+for i in foods:
+    print('{0}'.format(i))
+
+
+
+
+#定义未确认的用户
+unconfiremd_users = ['alice','slabe','brian']
+#定义已确认的用户
+confiremed_users = []
+while unconfiremd_users:
+    current_user = unconfiremd_users.pop()
+    print('Verifying user:' + current_user.title())
+    confiremed_users.append(current_user)
+
+print('\nThe following user have been confiremd:')
+for confiremed_user in confiremed_users:
+    print (confiremed_user.title())
+
+
+
+#验证问题
+responses = {}
+
+answer_flag = True;
+
+while answer_flag:
+    name = input('\n您的姓名：')
+    response = input('您喜欢吃什么东西：')
+    responses[name] = response
+    repeat = input('是否要继续录入数据（y/n）:')
+    if repeat.upper() == 'N':
+        answer_flag = False
+    elif repeat.upper() == 'Y':
+        answer_flag = True
+    else:
+        answer_flag = False
+        repeat = input('输入错误，退出输入！')
+
+print('--------结果如下--------')
+for name,response in responses.items():
+    print(name + '喜欢吃' + response)
