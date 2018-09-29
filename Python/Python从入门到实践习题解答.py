@@ -110,3 +110,25 @@ for i in magicians:
 show_magicians(magicians)
 make_great(magicians[:])
 show_magicians(magicians)
+
+#8-12
+def pizzas(*toppings):
+	print('您的pizza中加的料如下：')
+	for i in toppings:
+		print(i)
+	print('--------------------------')
+
+pizzas('鸡肉','火腿')
+pizzas('鸡蛋','培根','早餐肉')
+
+#8-13,14
+def build_profile(first_name,last_name,**else_info):
+	profile = {}
+	profile['first_name'] = first_name
+	profile['last_name'] = last_name
+	for key,value in else_info.items():
+			profile[key] = value
+	return profile
+
+user_a = build_profile('zhang','xiaolang',age = '24',location = 'tianshui',active = True)
+print(user_a)

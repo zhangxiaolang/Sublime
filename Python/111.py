@@ -1,16 +1,10 @@
-magicians = ['1','2','3']
-def show_magicians(magicians):
-	for i in magicians:
-		print('{0}是一个魔术师！'.format(i))
+def build_profile(first_name,last_name,**else_info):
+	profile = {}
+	profile['first_name'] = first_name
+	profile['last_name'] = last_name
+	for key,value in else_info.items():
+			profile[key] = value
+	return profile
 
-def make_great(magicians):
-	j = 0
-	for i in magicians:
-		magicians[j] = magicians[j] + '不'
-		print('{0}是一个魔术师！'.format(magicians[j]))
-		j += 1
-for i in magicians:
-	print(i)
-show_magicians(magicians)
-make_great(magicians[:])
-show_magicians(magicians)
+user_a = build_profile('zhang','xiaolang',age = '24',location = 'tianshui',active = True)
+print(user_a)
