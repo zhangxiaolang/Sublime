@@ -137,3 +137,61 @@ class IceCreamStand(Restaurant):
 flavors = ['抹茶','奶油','巧克力']
 re1 = IceCreamStand('爱的礼物','糕点')
 re1.describt_IceCreamStand()
+
+#9-7,9-8
+class User():
+	def __init__(self,first_name,last_name,*elseinfo):
+		self.first_name = first_name
+		self.last_name = last_name
+
+	def describe_user(self):
+		print('{0}{1},welocme to python!'.format(self.first_name,self.last_name))
+
+	def greet_user(self):
+		print('hello,{0}.{1}!'.format(self.first_name.title(),self.last_name))
+
+class Admin(User):
+	"""docstring for Admin"""
+	def __init__(self,first_name,last_name,privilegs):
+		super().__init__(first_name,last_name,privilegs)
+		self.privilegs = privilegs
+
+	def show_privileges(self):
+		print('管理员拥有的权限有：')
+		for i in self.privilegs:
+			print(i)
+
+quanxian = ['增','删','改','查']
+
+user1 = Admin('zhang','xiaolang', quanxian)
+user1.describe_user()
+user1.show_privileges()
+
+#9-14
+from random import randint
+class Die():
+	def __init__(self,side,count):
+		self.side = side
+		self.count = count
+
+	def roll_die(self):
+		n = randint(1,self.side)
+		return n
+
+def ThrowDie():
+	a = int(input('请输入您想要的骰子的面数：'))
+	b = int(input('请输入您想要的骰子的次数：'))
+	A = Die(a,b)
+	i=0
+	print('您选的的骰子面数为{0}，投掷次数为{1}'.format(a,b))
+	while(i<b):
+		print('第{0}次投掷，结果为：{1}'.format(i+1,A.roll_die()))
+		i += 1
+
+	judge = input('您是否要继续玩(y/n)：')
+	if (judge == 'y' or judge == 'Y'):
+		ThrowDie()
+	else:
+		print('感谢您的使用！')
+
+ThrowDie()
