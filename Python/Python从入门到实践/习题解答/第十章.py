@@ -16,7 +16,8 @@ with open('else\\111.txt') as pi_txt:
 	# print(context)
 	print(context.rstrip())
 
-filename = 'pi.txt'with open(filename) as pi_txt:
+filename = 'pi.txt'
+with open(filename) as pi_txt:
 	#存储到列表
 	context = pi_txt.readlines()
 for i in context:
@@ -61,3 +62,39 @@ guest()
 with open('File_folder\\Guest_name.txt') as gname2:
 	context = gname2.read()
 	print('hello,'+context.rstrip())
+
+
+#10-6,10-7
+print('------请输入两个数字，我将对他们进行除法操作，输入q退出程序------')
+
+while True:
+	a = input('请输入被除数：')
+	if(a.upper() == 'Q'):
+		print('程序正在退出....')
+		break
+	b = input('请输入除数：')
+	if(b.upper() == 'Q'):
+		print('程序正在退出....')
+		break
+	try:
+		 c= float(a)/float(b)
+	except ValueError:
+		msg = '您输入的不是数字，无法相除。'
+		print(msg)
+	else:
+		print('{0}除以{1}等于:{2}'.format(float(a),float(b),float(c)))
+
+
+
+#10-11
+import json
+a = input('请输入你喜欢的数字：')
+filename = 'number.json'
+
+with open(filename,'w') as f_obj:
+	json.dump(a,f_obj)
+
+
+with open(filename) as f_obj2:
+	a = json.load(f_obj2)
+	print('你喜欢的数字是：{0}'.format(a)) 
