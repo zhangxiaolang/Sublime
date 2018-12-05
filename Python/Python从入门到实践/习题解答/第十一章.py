@@ -33,6 +33,7 @@ def get_city_country_name(city,country,population = ''):
 #测试用例
 import unittest
 from shiyizhang import get_city_country_name
+
 class testcase(unittest.TestCase):
 	def test_city(self):
 		name1 = get_city_country_name('tianshui','china','200000')
