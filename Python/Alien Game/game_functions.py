@@ -4,25 +4,27 @@ import ship
 from bullet import Bullet
 
 def check_keydown_events(event,ai_settings,screen,ship,bullets):
-	if event.key == pygame.K_RIGHT:
+	if event.key == pygame.K_RIGHT or event.key == pygame.K_d:
 		ship.moving_right = True
-	elif event.key == pygame.K_LEFT:
+	elif event.key == pygame.K_LEFT or event.key == pygame.K_a:
 		ship.moving_left = True
-	elif event.key == pygame.K_UP:
+	elif event.key == pygame.K_UP or event.key == pygame.K_w:
 		ship.moving_up = True
-	elif event.key == pygame.K_DOWN:
+	elif event.key == pygame.K_DOWN or event.key == pygame.K_s:
 		ship.moving_down = True
-	elif event.key == pygame.K_SPACE:
+	elif event.key == pygame.K_SPACE or event.key == pygame.K_b:
 		fire_bullert(ai_settings,screen,ship,bullets)
+	elif event.key == pygame.K_q:
+		sys.exit()
 
 def check_keyup_events(event,ship):
-	if event.key == pygame.K_RIGHT:
+	if event.key == pygame.K_RIGHT or event.key == pygame.K_d:
 		ship.moving_right = False
-	elif event.key == pygame.K_LEFT:
+	elif event.key == pygame.K_LEFT or event.key == pygame.K_a:
 		ship.moving_left = False
-	elif event.key == pygame.K_UP:
+	elif event.key == pygame.K_UP or event.key == pygame.K_w:
 		ship.moving_up = False
-	elif event.key == pygame.K_DOWN:
+	elif event.key == pygame.K_DOWN or event.key == pygame.K_s:
 		ship.moving_down = False
 
 def check_events(ai_settings,screen,ship,bullets):
