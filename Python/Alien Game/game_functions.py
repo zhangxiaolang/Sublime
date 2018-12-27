@@ -1,6 +1,7 @@
 import sys
 import pygame
 import ship
+from alien import Alien
 from bullet import Bullet
 
 def check_keydown_events(event,ai_settings,screen,ship,bullets):
@@ -49,12 +50,14 @@ def update_bullets(bullets):
 			bullets.remove(bullet)
 	#print(len(bullets))
 
-def update_screen(ai_settings,screen,ship,bullets):
+def update_screen(ai_settings,screen,ship,aliens,bullets):
 	#每次循环重新绘制屏幕
 	screen.fill(ai_settings.bg_color)
-	for bullet in bullets.sprites():
+	for bullet in bullets:
 		bullet.draw_bullet()
 	ship.blitme()
+	#alien.blitme()
+	aliens.draw(screen)
 
 	#让绘制的屏幕可见
 	pygame.display.flip()
