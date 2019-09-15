@@ -4,7 +4,7 @@ import game_functions as gf
 from ship import Ship
 from settings import Settings
 from pygame.sprite import Group
-from alien import Alien
+#from alien import Alien
 def run_game():
 	#初始化游戏并创建一个屏幕对象
 	pygame.init()
