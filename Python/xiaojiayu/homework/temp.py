@@ -1,9 +1,22 @@
-print('red  yellow  green')
-for red in range(0, 4):
-    for yellow in range(0, 4):
-        for green in range(2, 7):
-            if red + yellow + green == 8:
-                # 注意，下边不是字符串拼接，因此不用“+”哦~
-                print(red, '\t', yellow, '\t', green)
+import os
+import json
 
 
+file_name = '123\\user_name.json'
+
+def login_on():
+	names = []
+	name = input('请输入您的姓名：')
+	names.append(name)
+	print(names)
+
+	with open(file_name, 'w') as write_user:
+		json.dump(names, write_user)
+
+
+def say_hello():
+	with open(file_name) as read_user:
+		users = json.load(read_user)
+		print('hello {0},welcome python world.',format(users))
+
+login_on()
